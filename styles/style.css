@@ -84,6 +84,8 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-block-start: 20px;
+  margin-inline-end: 20px;
 }
 
 .header__theme-menu-item {
@@ -173,7 +175,8 @@
   justify-self: stretch;
   align-self: center;
   margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block-end: 84px;
+  margin-inline-start: 10px;
 }
 
 .text-decoration {
@@ -204,6 +207,10 @@
   grid-column-gap: 20px;
   padding-inline-start: 20px;
   padding-inline-end: 20px;
+}
+
+.content .content__lot:nth-child(3) {
+  grid-row-gap: 0;
 }
 
 .content__lot__heading {
@@ -324,8 +331,8 @@
 .footer {
   align-content: center;
   justify-items: center;
-  margin-block-start: 60px;
-  margin-inline-end: 20px; /* Синхронизировали с header, чтобы уголки легки корректно*/
+  margin-block-start: 72px;
+  margin-inline-end: 20px;
 }
 
 .footer_heading {
@@ -346,14 +353,19 @@
   .header__theme-menu-list {
     flex-direction: column;
     justify-self: end;
+    margin-block-end: 58px;
+    margin-inline-end: 0;
   }
 
   .header__text {
     align-self: start;
+    margin-block-start: 42px;
+    margin-inline-start: 10px;
   }
 
   .content__lot {
-    grid-template-rows: repeat(4, min-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-column-gap: 39px;
   }
 
   .content__lot__card-Multitasking {
@@ -369,6 +381,10 @@
   .content__lot__card-gadgets {
     grid-column: 1/end;
     grid-row: 4/end;
+  }
+
+  .footer {
+    margin-block-start: 70px;
   }
 }
 
@@ -406,23 +422,23 @@
     grid-column: 1/end;
     justify-self: stretch;
     align-self: center;
+    display: inline-block;
+    margin-block-end: 25px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
   }
 
   .header__theme-menu-list {
     flex-direction: column;
     justify-self: end;
+    gap: 14px;
+    margin-block-start: 26px;
+    margin-inline-end: 0;
   }
 
   .header__theme-menu {
     align-self: center;
     padding-block-start: 11px;
-    margin-inline-end: 10px;
-  }
-
-  .header__text {
-    display: inline-block;
-    margin-block-end: 10px;
-    margin-inline-start: 10px;
     margin-inline-end: 10px;
   }
 
@@ -432,7 +448,8 @@
   }
 
   .content {
-    gap: 50px
+    gap: 50px;
+    margin-block-start: 40px;
   }
 
   .content__lot__text-link {
@@ -444,6 +461,10 @@
     flex-direction: column;
     padding-inline-start: 10px;
     padding-inline-end: 10px;
+  }
+
+  .content .content__lot:nth-child(3) {
+    grid-row-gap: 20px;
   }
 
   .сontent__lot-images {
