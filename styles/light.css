@@ -5,7 +5,8 @@
 */
 
 :root.theme-light {
-  --bg-image: url("/images/cover-image-light.png");
+  --save-bg-color: #fff1f7;
+  --bg-image: url("../images/cover-image-light.png");
   --text-color: rgba(53, 52, 48, 1);
   --color-dec: rgba(53, 52, 48, 1);
   --xl-head-color: rgba(255, 194, 230, 1);
@@ -15,18 +16,19 @@
   --bottom-link: rgba(50, 49, 45, 0.4);
 }
 
-.theme-light .header__theme-menu::after {
-  content: "";
+.theme-light .decor-item {
+  color: transparent;
 }
 
-.theme-light .header__theme-menu::before {
+.theme-light .decor-item::before {
   background-color: transparent;
   box-shadow: transparent 0 0 4px 3px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-  --bg-image: url("/images/cover-image-light.png");
+  --save-bg-color: #fff1f7;
+  --bg-image: url("../images/cover-image-light.png");
   --text-color: rgba(53, 52, 48, 1);
   --color-dec: rgba(53, 52, 48, 1);
   --xl-head-color: rgba(255, 194, 230, 1);
@@ -36,20 +38,20 @@
   --bottom-link: rgba(50, 49, 45, 0.4);
   }
 
-  .theme-light .header__theme-menu::after {
-    content: "";
+  .theme-light .decor-item {
+    color: transparent;
   }
 
-  .theme-auto .header__theme-menu::after {
-    content: "";
+  .theme-auto .decor-item {
+    color: transparent;
   }
 
-  .theme-auto .header__theme-menu::before {
+  .theme-auto .decor-item::before {
     background-color: transparent;
     box-shadow: transparent 0 0 4px 3px;
   }
 
-  .theme-light .header__theme-menu::before {
+  .theme-light .decor-item::before {
     background-color: transparent;
     box-shadow: transparent 0 0 4px 3px;
   }

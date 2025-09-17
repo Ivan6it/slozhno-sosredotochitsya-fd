@@ -5,7 +5,8 @@
 */
 
 :root.theme-dark {
-  --bg-image: url("/images/cover-image-dark.png");
+  --save-bg-color: #000028;
+  --bg-image: url("../images/cover-image-dark.png");
   --accent-color: #ff0070;
   --bg-color: rgba(255, 0, 112, 1);
   --sm-head-color: rgba(0, 0, 40, 1);

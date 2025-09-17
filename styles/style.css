@@ -2,13 +2,12 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--save-bg-color);
   background-image: var(--bg-image);
   background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  object-fit: cover;
-  overflow-x: hidden;
   margin: 0;
 }
 
@@ -16,42 +15,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  margin-block-end: 20px;
-  margin-inline-end: 20px;
+  min-height: 768px;
+  height: 100vh;
 }
 
 .decorated-zone {
-  min-height: 768px;
   position: relative;
-}
-
-.header__theme-menu::after {
-  font-family: 'IBM Plex mono', sans-serif;
-  content: "REC";
-  width: 33px;
-  height: 26px;
-  right: 28px;
-  top: 16px;
-  display: inline-block;
-  position: absolute;
-  font-weight: 400;
-  font-style: normal;
-  font-size: var(--sm);
-  line-height: 1.39;
-  color: var(--color-dec);
-}
-
-.header__theme-menu::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  height: 9px;
-  width: 9px;
-  border-radius: 50%;
-  background-color: var(--color-dec);
-  top: 24px;
-  right: 9px;
-  box-shadow: var(--color-dec) 0 0 4px 3px;
 }
 
 .decorated-zone::after {
@@ -60,7 +29,7 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  bottom: 16px;
+  bottom: 22px;
   left: 20px;
   border: 1px solid var(--color-dec);
   border-top: 0;
@@ -73,19 +42,47 @@
   display: inline-block;
   width: 25px;
   height: 25px;
-  top: 16px;
-  right: 0;
+  top: 20px;
+  right: 20px;
   border: 1px solid var(--color-dec);
   border-bottom: 0;
   border-left: 0;
+}
+
+.decor-item {
+  font-family: 'IBM Plex mono', monospace;
+  width: 33px;
+  height: 26px;
+  right: 49px;
+  top: 20px;
+  display: inline-block;
+  position: absolute;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--sm);
+  line-height: 1.39;
+  color: var(--color-dec);
+}
+
+.decor-item::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--color-dec);
+  top: 9px;
+  right: -18px;
+  box-shadow: var(--color-dec) 0 0 4px 3px;
 }
 
 .header__theme-menu-list {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-block-start: 20px;
-  margin-inline-end: 20px;
+  margin-block-start: 21px;
+  margin-inline-end: 40px;
 }
 
 .header__theme-menu-item {
@@ -98,7 +95,7 @@
 }
 
 .header__theme-menu-button {
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   font-weight: 400;
   font-style: normal;
   font-size: var(--sm);
@@ -111,11 +108,11 @@
   padding-block-start: 1.5px;
   padding-block-end: 1.5px;
   border-color: transparent;
-  outline: 1px solid var(--color-dec);
   border-block-start: 0;
   border-inline-start: 0;
   border-inline-end: 0;
   border-block-end: 1px solid transparent;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
@@ -140,7 +137,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  outline: none;
+  outline: 1px solid var(--color-dec);
 }
 
 .content__lot__text-link:focus {
@@ -155,9 +152,9 @@
 }
 
 .heading-decoration {
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-size: var(--lg);
   line-height: 0.83;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -176,13 +173,13 @@
   align-self: center;
   margin-block-start: 0;
   margin-block-end: 84px;
-  margin-inline-start: 10px;
+  margin-inline-end: 20px;
 }
 
 .text-decoration {
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-size: var(--sm);
   color: var(--sm-head-color);
   line-height: 1.3;
@@ -202,21 +199,24 @@
 .content__lot {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, min-content);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
   padding-inline-start: 20px;
   padding-inline-end: 20px;
 }
 
-.content .content__lot:nth-child(3) {
+.content__lot-dec {
+  margin-block-end: 20px;
+}
+
+.content__lot-end {
   grid-row-gap: 0;
 }
 
 .content__lot__heading {
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-size: var(--sm);
   line-height: 1.3;
   color: var(--color-dec);
@@ -230,10 +230,13 @@
 }
 
 .content__lot__text {
-  grid-column: 2/span 2;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.content__lot__text-position {
+  grid-column: 2/span 2;
 }
 
 .sm-heading {
@@ -245,7 +248,7 @@
 }
 
 .content__lot__text_sm {
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: 'IBM Plex mono', monospace;
   margin-block-start: 0;
   margin-block-end: 0;
   font-weight: 400;
@@ -258,13 +261,6 @@
 .position-heading {
   grid-column: 1/2;
   grid-row: 1/2;
-}
-
-.content__lot__card {
-  grid-row: 2/end;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .additional-styling {
@@ -286,12 +282,12 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .сontent__lot-images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: min-content, minmax(260px, 100%), minmax(315px, 100%), minmax(433px, 100%);
+  grid-template-columns: repeat(2, 32%);
   row-gap: 20px;
   column-gap: 20px;
   padding-inline-start: 20px;
@@ -331,8 +327,9 @@
 .footer {
   align-content: center;
   justify-items: center;
-  margin-block-start: 72px;
-  margin-inline-end: 20px;
+  margin-block-start: 60px;
+  min-height: 768px;
+  height: 100vh;
 }
 
 .footer_heading {
@@ -340,7 +337,7 @@
 }
 
 @media (767px < width < 1024px) {
-  .decorated-zone {
+  .header {
     min-height: 1024px;
   }
 
@@ -350,22 +347,43 @@
     align-self: end;
   }
 
+  .heading-decoration {
+    margin-block-start: 3px;
+  }
+
   .header__theme-menu-list {
     flex-direction: column;
     justify-self: end;
-    margin-block-end: 58px;
-    margin-inline-end: 0;
+    margin-block-end: 55px;
+    margin-inline-end: 21px;
+    gap: 13px;
+  }
+
+  .сontent__lot-images {
+  grid-template-columns: repeat(2, 31.5%);
+  }
+
+  .content__lot__list {
+    padding-inline-start: 7px;
   }
 
   .header__text {
     align-self: start;
     margin-block-start: 42px;
-    margin-inline-start: 10px;
   }
 
   .content__lot {
     grid-template-rows: repeat(2, min-content);
     grid-column-gap: 39px;
+  }
+
+  .content__lot-end {
+    grid-column-gap: 20px;
+  }
+
+  .content__lot-dec {
+    margin-block-end: 0;
+    grid-row-gap: 0;
   }
 
   .content__lot__card-Multitasking {
@@ -384,28 +402,15 @@
   }
 
   .footer {
-    margin-block-start: 70px;
+    min-height: 1024px;
   }
 }
 
 @media (width < 768px) {
-  .decorated-zone {
-    min-height: 668px;
-  }
-
   .header {
+    min-height: 668px;
     margin-block-end: 0;
     margin-inline-end: 0;
-  }
-
-  .header__theme-menu::after {
-    right: 40px;
-    top: 11px;
-  }
-
-  .header__theme-menu::before {
-    top: 19px;
-    right: 19px;
   }
 
   .decorated-zone::after {
@@ -416,6 +421,11 @@
   .decorated-zone::before {
     top: 10px;
     right: 10px;
+  }
+
+  .decor-item {
+    top: 10px;
+    right: 38px;
   }
 
   .header__text {
@@ -432,7 +442,7 @@
     flex-direction: column;
     justify-self: end;
     gap: 14px;
-    margin-block-start: 26px;
+    margin-block-start: 30px;
     margin-inline-end: 0;
   }
 
@@ -445,15 +455,12 @@
   .heading-decoration {
     margin-inline-start: 10px;
     margin-inline-end: 10px;
+    font-size: 116px;
   }
 
   .content {
     gap: 50px;
     margin-block-start: 40px;
-  }
-
-  .content__lot__text-link {
-    text-shadow: 2px 0 0 var(--accent-color);
   }
 
   .content__lot {
@@ -463,7 +470,7 @@
     padding-inline-end: 10px;
   }
 
-  .content .content__lot:nth-child(3) {
+  .content__lot-end {
     grid-row-gap: 20px;
   }
 
@@ -476,6 +483,7 @@
   }
 
   .footer {
+    min-height: 668px;
     margin-block-start: 40px;
     margin-inline-end: 0;
   }
