@@ -55,7 +55,7 @@
   height: 26px;
   right: 49px;
   top: 20px;
-  display: inline-block;
+  display: var(--record);
   position: absolute;
   font-weight: 400;
   font-style: normal;
@@ -67,7 +67,7 @@
 .decor-item::before {
   content: "";
   position: absolute;
-  display: inline-block;
+  display: var(--record);
   height: 9px;
   width: 9px;
   border-radius: 50%;
@@ -235,8 +235,15 @@
   gap: 10px;
 }
 
+.content__lot:has(.content__lot__text-position) {
+  row-gap: 0;
+}
+
 .content__lot__text-position {
   grid-column: 2/span 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
 }
 
 .sm-heading {
@@ -265,10 +272,6 @@
 
 .additional-styling {
   font-weight: 400;
-}
-
-.content__lot__text_gap:first-child {
-  margin-block-end: 10px;
 }
 
 .content__lot__list {
@@ -377,28 +380,17 @@
     grid-column-gap: 39px;
   }
 
+  .content__lot-pos {
+    grid-template-columns: 1fr;
+  }
+
   .content__lot-end {
     grid-column-gap: 20px;
   }
 
   .content__lot-dec {
-    margin-block-end: 0;
+    margin-block-end: 20px;
     grid-row-gap: 0;
-  }
-
-  .content__lot__card-Multitasking {
-    grid-column: 1/end;
-    grid-row: 2/3;
-  }
-
-  .content__lot__card-meal {
-    grid-column: 1/end;
-    grid-row: 3/4;
-  }
-
-  .content__lot__card-gadgets {
-    grid-column: 1/end;
-    grid-row: 4/end;
   }
 
   .footer {
@@ -468,6 +460,10 @@
     flex-direction: column;
     padding-inline-start: 10px;
     padding-inline-end: 10px;
+  }
+
+  .position {
+    padding-block-end: 20px;
   }
 
   .content__lot-end {

@@ -14,15 +14,7 @@
   --sm-head-color: rgba(53, 52, 48, 1);
   --bg-color: rgba(255, 141, 203, 1);
   --bottom-link: rgba(50, 49, 45, 0.4);
-}
-
-.theme-light .decor-item {
-  color: transparent;
-}
-
-.theme-light .decor-item::before {
-  background-color: transparent;
-  box-shadow: transparent 0 0 4px 3px;
+  --record: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -36,23 +28,6 @@
   --sm-head-color: rgba(53, 52, 48, 1);
   --bg-color: rgba(255, 141, 203, 1);
   --bottom-link: rgba(50, 49, 45, 0.4);
-  }
-
-  .theme-light .decor-item {
-    color: transparent;
-  }
-
-  .theme-auto .decor-item {
-    color: transparent;
-  }
-
-  .theme-auto .decor-item::before {
-    background-color: transparent;
-    box-shadow: transparent 0 0 4px 3px;
-  }
-
-  .theme-light .decor-item::before {
-    background-color: transparent;
-    box-shadow: transparent 0 0 4px 3px;
+  --record: none;
   }
 }
